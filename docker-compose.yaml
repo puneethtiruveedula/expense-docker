@@ -12,11 +12,11 @@ services:
     container_name: backend
     command: sh -c "sleed 20 && node /opt/server/index.js"
     depends_on:
-      - mysql
+    - mysql
   frontend:
     image: frontend:v1.0
     container_name: frontend
     depends_on:
-      - backend
+    - backend
     ports:
-      - "80:80"
+    - "80:80"
